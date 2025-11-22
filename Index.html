@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CS-økonomien – interaktiv scroll-fortelling</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Scroll progress -->
+  <div class="progress" id="progress"></div>
+
+  <!-- Flyvende skins bak alt innhold -->
+  <div class="skins-layer" id="skinsLayer" aria-hidden="true"></div>
+
+  <!-- HERO -->
+  <header class="hero scene" id="hero">
+  <div class="hero-bg">
+    <div class="hero-glow"></div>
+    <div class="hero-grid"></div>
+  </div>
+
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="kicker">Interaktiv fortelling</div>
+
+      <h1 class="hero-title">
+        CS-økonomien
+        <span class="hero-title-accent">– fra nysgjerrighet til levebrød</span>
+      </h1>
+
+      <!-- Typewriter / rotating line -->
+      <p class="hero-rotator" aria-live="polite">
+        <span id="rotatingText"></span><span class="cursor">|</span>
+      </p>
+
+      <div class="hero-actions">
+        <button class="btn primary" id="startStoryBtn">
+          Start historien
+        </button>
+        <button class="btn ghost" id="toggleMotionBtn" aria-pressed="false">
+          Pause bakgrunn
+        </button>
+      </div>
+      <div class="drop-ticker">
+  <div class="drop-track">
+    <span class="drop">★ StatTrak™</span>
+    <span class="drop">Covert</span>
+    <span class="drop">Classified</span>
+    <span class="drop">Restricted</span>
+    <span class="drop">Mil-Spec</span>
+    <span class="drop">Factory New</span>
+    <span class="drop">Field-Tested</span>
+
+    <span class="drop">★ StatTrak™</span>
+    <span class="drop">Covert</span>
+    <span class="drop">Classified</span>
+    <span class="drop">Restricted</span>
+    <span class="drop">Mil-Spec</span>
+    <span class="drop">Factory New</span>
+    <span class="drop">Field-Tested</span>
+  </div>
+</div>
+
+
+      <!-- live mini-stats i header -->
+      <div class="hero-stats">
+        <div class="stat-pill">
+          <div class="label">Startinventar</div>
+          <div class="value"><span class="count" data-from="0" data-to="500">0</span> kr</div>
+        </div>
+        <div class="stat-pill">
+          <div class="label">VGS-slutt</div>
+          <div class="value"><span class="count" data-from="0" data-to="70000">0</span> kr</div>
+        </div>
+        <div class="stat-pill">
+          <div class="label">Semester-profit</div>
+          <div class="value"><span class="count" data-from="0" data-to="200000">0</span> kr</div>
+        </div>
+      </div>
+    </div>
+
+   
+</header>
+
+
+  <!-- Timeline rail -->
+  <aside class="rail" id="rail">
+    <div class="dot active" data-target="s1"><i></i>Starten</div>
+    <div class="dot" data-target="s2"><i></i>Første handel</div>
+    <div class="dot" data-target="s3"><i></i>Tidlig system</div>
+    <div class="dot" data-target="s4"><i></i>Seriøs trading</div>
+    <div class="dot" data-target="s5"><i></i>Levebrød</div>
+    <div class="dot" data-target="s6"><i></i>Menneskelig side</div>
+    <div class="dot" data-target="s7"><i></i>Nedturer</div>
+    <div class="dot" data-target="s8"><i></i>Krasj & CS2</div>
+    <div class="dot" data-target="s9"><i></i>Læring</div>
+  </aside>
+
+  <main>
+    <section class="scene step" id="s2" data-theme="blue" data-map="assets/maps/mirage.jpg">
+  <div class="scene-inner market" data-anim="market">
+
+    <div class="chapter">Kapittel 2</div>
+    <h2>Den første handelen – og det første mønsteret</h2>
+    <p class="market-lead">
+      På videregående oppdaget han noe merkelig rundt <strong>AK Redline</strong>:
+      samme skin ble priset helt ulikt avhengig av hvem som solgte.
+    </p>
+
+    <!-- Mini market board -->
+    <div class="market-board">
+      <div class="market-col">
+        <div class="market-tag poor">“Dårlig råd”</div>
+        <div class="market-card">
+          <div class="skin-name">AK Redline</div>
+          <div class="price">2 keys</div>
+          <div class="sub">Selger dyrt</div>
+        </div>
+      </div>
+
+      <div class="market-col mid">
+        <div class="spread">
+          <div class="spread-line"></div>
+          <div class="spread-chip">Spread = 1 key</div>
+        </div>
+      </div>
+
+      <div class="market-col">
+        <div class="market-tag rich">“God råd”</div>
+        <div class="market-card">
+          <div class="skin-name">AK Redline</div>
+          <div class="price">1 key</div>
+          <div class="sub">Selger billig</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step-by-step arbitrage -->
+    <div class="arb-steps">
+      <div class="arb-step" data-step="1">
+        <div class="arb-num">1</div>
+        <div class="arb-text">
+          Kjøp billig fra folk som vil ha rask handel
+          <span class="arb-mini">(1 key)</span>
+        </div>
+      </div>
+
+      <div class="arb-step" data-step="2">
+        <div class="arb-num">2</div>
+        <div class="arb-text">
+          Selg videre til noen som verdsetter den høyere
+          <span class="arb-mini">(2 keys)</span>
+        </div>
+      </div>
+
+      <div class="arb-step" data-step="3">
+        <div class="arb-num">3</div>
+        <div class="arb-text">
+          Gjenta. Små gevinster blir store over tid.
+        </div>
+      </div>
+    </div>
+
+    <!-- Result callout -->
+    <div class="market-result">
+      <div class="result-chip">Arbitrage</div>
+      <div class="result-text">
+        Med bare <strong>100 kr i uka</strong> begynte kontoen å vokse – stabilt og konsistent.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+    <section class="scene step" id="s2" data-theme="blue" data-map="assets/maps/mirage.jpg">
+  <div class="scene-inner market2" data-anim="market2">
+
+    <div class="chapter">Kapittel 2</div>
+    <h2>Den første handelen – og det første mønsteret</h2>
+
+    <!-- Fortellende intro (kommer inn i 2 beats) -->
+    <div class="storybeats">
+      <p class="beatline">
+        På videregående begynte han å legge merke til noe rart:
+        <strong>samme AK Redline</strong> ble priset forskjellig av folk i samme miljø.
+      </p>
+      <p class="beatline faint">
+        Noen ville ha raske keys. Andre satt rolig og ventet på riktig kjøper.
+      </p>
+    </div>
+
+    <!-- Market scene -->
+    <div class="market-scene">
+      <!-- Venstre selger -->
+      <div class="market-side">
+        <div class="market-tag rich">“God råd”</div>
+        <div class="market-card rich-card" id="richCard2">
+          <div class="skin-name">AK Redline</div>
+          <div class="price">1 key</div>
+          <div class="sub">Selger billig</div>
+        </div>
+        <div class="seller-note">“Vil bare vite det er solgt.”</div>
+      </div>
+
+      <!-- Midt: handel-linje -->
+      <div class="market-mid">
+        <div class="spread-chip">Arbitrage-vindu</div>
+
+        <div class="trade-track" aria-hidden="true">
+          <img id="tradeSkin2" src="assets/skins/redline.png" alt="" />
+          <div class="track-dots"></div>
+        </div>
+
+        <div class="mini-log" id="miniLog">
+          <!-- JS fyller inn -->
+        </div>
+      </div>
+
+      <!-- Høyre kjøper -->
+      <div class="market-side">
+        <div class="market-tag poor">“Dårlig råd”</div>
+        <div class="market-card poor-card" id="poorCard2">
+          <div class="skin-name">AK Redline</div>
+          <div class="price">2 keys</div>
+          <div class="sub">Kjøper dyrt</div>
+        </div>
+        <div class="seller-note">“Trenger den nå.”</div>
+      </div>
+    </div>
+
+    <!-- Steg som kommer én og én -->
+    <div class="arb-steps steps2">
+      <div class="arb-step" data-step="1">
+        <div class="arb-num">1</div>
+        <div class="arb-text">
+          Han kjøper fra “billig-siden” og legger Redlines i inventory.
+          <span class="arb-mini">(1 key)</span>
+        </div>
+      </div>
+      <div class="arb-step" data-step="2">
+        <div class="arb-num">2</div>
+        <div class="arb-text">
+          Han selger videre til folk som betaler mer.
+          <span class="arb-mini">(2 keys)</span>
+        </div>
+      </div>
+      <div class="arb-step" data-step="3">
+        <div class="arb-num">3</div>
+        <div class="arb-text">
+          Han gjentar dette hver uke. Små marginer blir store tall.
+        </div>
+      </div>
+    </div>
+
+    <!-- Resultat / teller -->
+    <div class="market-result result2">
+      <div class="result-chip">Første mønster</div>
+      <div class="result-text">
+        Demo-flips:
+        <strong><span id="flipCount2">0</span></strong>
+        <span class="dot-sep">•</span>
+        Stablet fortjeneste:
+        <strong><span id="profitCount2">0</span></strong> keys
+      </div>
+    </div>
+
+    <p class="outroline">
+      Det var ikke avansert. Bare <strong>ren observasjon</strong>.
+      Men det var nok til å forstå at markedet ikke er rasjonelt —
+      og at <strong>små gevinster kan bygges opp</strong>.
+    </p>
+
+  </div>
+</section>
+
+
+    <section class="scene step" id="s3" data-theme="orange">
+      <div class="scene-inner">
+        <div class="chapter">Kapittel 3</div>
+        <h2>Tidlig system – små summer, høy læringsverdi</h2>
+        <p>
+          Kjøp → flytt konto → trade → selg. Ikke proft, men læring i praksis.
+        </p>
+
+        <div class="growth" data-growth="70">
+          <div class="row">
+            <div>Startinventar</div><div>VGS-slutt</div>
+          </div>
+          <div class="bar"><span></span></div>
+          <div class="row end">
+            <div><strong>~500 kr</strong></div><div><strong>60–70k kr</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene step" id="s4" data-theme="purple">
+      <div class="scene-inner">
+        <div class="chapter">Kapittel 4</div>
+        <h2>Overgangen til seriøs trading</h2>
+        <p>
+          Howl og Medusa ble første store kjøp.
+          Howl-salget for ~30k gjorde trading seriøst.
+        </p>
+
+        <div class="beats">
+          <div class="beat">Float / pattern</div>
+          <div class="beat">Samlere</div>
+          <div class="beat">Kina inn</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene step" id="s5" data-theme="green">
+      <div class="scene-inner">
+        <div class="chapter">Kapittel 5</div>
+        <h2>Daglig rutine – trading som levebrød</h2>
+        <p>
+          Skole 08–16 → trading til 02.
+          Ett semester på trading alene ga ~200k profit.
+        </p>
+
+        <div class="callouts">
+          <div class="call">
+            <div class="big"><span class="count" data-from="0" data-to="200000">0</span> kr</div>
+            <div class="small">Profit på ett semester</div>
+          </div>
+          <div class="call">
+            <div class="big">Store flips</div>
+            <div class="small">Høy risiko</div>
+          </div>
+          <div class="call">
+            <div class="big">Holdings</div>
+            <div class="small">Sikrere avkastning</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene step" id="s6" data-theme="blue">
+      <div class="scene-inner">
+        <div class="chapter">Kapittel 6</div>
+        <h2>Den menneskelige siden</h2>
+        <p>
+          Inventory-verdien styrte dagsformen.
+          Han lærte å ikke knytte identitet til tall.
+        </p>
+        <div class="quote">“Det lønner seg mer å være en god person i lengden.”</div>
+      </div>
+    </section>
+
+    <section class="scene step" id="s7" data-theme="orange">
+      <div class="scene-inner">
+        <div class="chapter">Kapittel 7</div>
+        <h2>Nedturene og risikoen</h2>
+        <p>
+          Noen feiltrades kostet 20–30k.
+          Første kniv ble scamma, men ga retning.
+        </p>
+
+        <div class="growth" data-growth="35">
+          <div class="row">
+            <div>Feiltrades</div><div>Læring</div>
+          </div>
+          <div class="bar"><span></span></div>
+          <div class="row end">
+            <div><strong>-20–30k</strong></div><div><strong>Bedre disiplin</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene step" id="s8" data-theme="purple">
+      <div class="scene-inner">
+        <div class="chapter">Kapittel 8</div>
+        <h2>Markedskræsjet – CS2-økonomi</h2>
+        <p>
+          Rask profitt i panikk, men økende uforutsigbarhet:
+          hype, dominans og uregulerte bevegelser.
+        </p>
+      </div>
+    </section>
+
+    <section class="scene step" id="s9" data-theme="green">
+      <div class="scene-inner">
+        <div class="chapter">Kapittel 9</div>
+        <h2>Oppsummering</h2>
+        <p>Analyse slår flaks. Etikk varer lengst. Risiko må tåles.</p>
+
+        <div class="beats">
+          <div class="beat">Analyse > flaks</div>
+          <div class="beat">Relasjoner</div>
+          <div class="beat">Timing</div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="end">
+      Ferdig. Vil du ha flere skins eller mer NRK-scroll med sticky bilder, si fra.
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
